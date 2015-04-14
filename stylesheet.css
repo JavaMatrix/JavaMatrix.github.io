@@ -7,10 +7,19 @@ img {
 }
 
 input {
-	margin: auto;
+	margin-left: auto;
+	margin-right: auto;
 	width: 50%;
 }
 
 table {
-	margin: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div {
+	float: bottom;
+	border-top: 1px solid #444444;
+	background-color: #777777;
+	height: 1.5em;
 }
