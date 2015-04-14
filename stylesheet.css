@@ -3,5 +3,8 @@
 }
 
 img {
-	margin: auto;
+	width: 512;
+	height: 180;
+	margin-left: auto;
+	margin-right: auto;
 }
