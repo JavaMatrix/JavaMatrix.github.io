@@ -8,6 +8,7 @@ img {
 
 input {
 	width: 400px;
+	display: block;
 }
 
 #center {
