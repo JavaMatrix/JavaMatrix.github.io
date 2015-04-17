@@ -2,7 +2,7 @@
 	background-color: #EEEEEE;
 }
 
-img {
+.banner {
 	width: 512px;
 	height: 180px;
 	display: block;
@@ -37,6 +37,15 @@ img {
 	height: 1em;
 }
 
+.selected-menu-item {
+	text-align: center;
+	color: #222222;
+	font-style: bold;
+	display: inline-block;
+	padding: 5px 10px 5px 10px;
+	height: 1em;
+}
+
 .menu-item:hover {
 	text-align: center;
 	text-decoration: underline;
@@ -52,6 +61,10 @@ img {
 	width: 80%;
 	text-align: left;
 	margin: 5px 10px 5px 10px;
+}
+
+p.textcontent {
+	text-indent: 30px;
 }
 
 h1.textcontent {
@@ -82,4 +95,13 @@ a:hover {
 	text-decoration: underline;
 	color:#111111;
 	font-style: bold;
+}
+
+td {
+	vertical-align: center;
+}
+
+table {
+	position: relative;
+	left: -30px;
 }
