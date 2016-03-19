@@ -7,7 +7,7 @@ I18n.Load = function()
 
 I18n.LoadFile = function(text)
 {
-    var doc = yaml.safeLoad(text);
+    var doc = safeLoad(text);
     for (var tag in doc) {
         console.log(tag);
     }
