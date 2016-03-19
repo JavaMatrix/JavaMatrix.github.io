@@ -1,0 +1,25 @@
+body
+{
+    background-color: black;
+    color: #00FF00;
+}
+
+div
+{
+    display: inline;
+}
+
+#out
+{
+    font-family: Consolas, Courier New, Courier, monospace;
+}
+
+.cursor-on
+{
+    color: #00FF00;
+}
+
+.cursor-off
+{
+    color: black;
+}
