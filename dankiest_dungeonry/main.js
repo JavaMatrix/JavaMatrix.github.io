@@ -8,8 +8,6 @@ window.mobilecheck = function() {
 if (mobilecheck())
 {
     var textbox = document.createElement("textarea");
-    textbox.rows = 1;
-    textbox.columns = 50;
     textbox.id = "mobilein";
     document.getElementById("mobileinarea").appendChild(textbox);
 }
