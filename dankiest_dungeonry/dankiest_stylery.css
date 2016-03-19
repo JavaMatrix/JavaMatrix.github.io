@@ -9,12 +9,6 @@ div
     display: inline;
 }
 
-input {
-    background: transparent;
-    color: transparent;
-    border: none;
-}
-
 a
 {
     color: teal;

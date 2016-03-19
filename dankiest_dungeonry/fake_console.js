@@ -169,88 +169,83 @@ class Output
     
     static MobileReadLine(callback, context)
     {
-        var box = document.createElement("textarea");
-        var ht = document.getElementsByTagName("html")[0];
-        ht.onclick = function()
-        {
-            box.focus();
-            var out = document.getElementById("out");
-            var input_area = document.createElement("div");
-            input_area.id = "input_area";
-            out.appendChild(input_area);
-            var input = document.createElement("div");
-            input.id = "input";
-            input_area.appendChild(input);
-            var cursor = document.createElement("div");
-            cursor.id = "cursor";
-            cursor.classList.add("cursor-on");
-            cursor.innerText = "_";
-            input_area.appendChild(cursor);
-            
-            // Start up the cursor.
-            function blinkCursor(params) {
-                if (this.cursor_on)
-                {
-                    document.getElementById("cursor").classList.remove("cursor-on");
-                    document.getElementById("cursor").classList.add("cursor-off");
-                    this.cursor_on = false;
-                }
-                else
-                {
-                    document.getElementById("cursor").classList.remove("cursor-off");
-                    document.getElementById("cursor").classList.add("cursor-on");
-                    this.cursor_on = true;
-                }
-            }
-            blinkCursor.cursor_on = true;
-            var cursorBlinkEvent = window.setInterval(blinkCursor, 500);
-            
-            function keypress(e)
+        var box = document.getElementById("mobilein");
+        var out = document.getElementById("out");
+        var input_area = document.createElement("div");
+        input_area.id = "input_area";
+        out.appendChild(input_area);
+        var input = document.createElement("div");
+        input.id = "input";
+        input_area.appendChild(input);
+        var cursor = document.createElement("div");
+        cursor.id = "cursor";
+        cursor.classList.add("cursor-on");
+        cursor.innerText = "_";
+        input_area.appendChild(cursor);
+        
+        // Start up the cursor.
+        function blinkCursor(params) {
+            if (this.cursor_on)
             {
-                e = e || event;
-                if (e.keyCode == 13) // Enter
+                document.getElementById("cursor").classList.remove("cursor-on");
+                document.getElementById("cursor").classList.add("cursor-off");
+                this.cursor_on = false;
+            }
+            else
+            {
+                document.getElementById("cursor").classList.remove("cursor-off");
+                document.getElementById("cursor").classList.add("cursor-on");
+                this.cursor_on = true;
+            }
+        }
+        blinkCursor.cursor_on = true;
+        var cursorBlinkEvent = window.setInterval(blinkCursor, 500);
+        
+        function keypress(e)
+        {
+            e = e || event;
+            if (e.keyCode == 13) // Enter
+            {
+                var text = document.getElementById("input").innerHTML.slice();
+                var p = document.getElementById("out");
+                var c = document.getElementById("input_area");
+                p.removeChild(c);
+                window.clearInterval(cursorBlinkEvent);
+                box.removeEventListener("keypress", keypress);
+                box.removeEventListener("keydown", keydown);
+                
+                Output.WriteLine(text);
+                
+                if(callback)
                 {
-                    var text = document.getElementById("input").innerHTML.slice();
-                    var p = document.getElementById("out");
-                    var c = document.getElementById("input_area");
-                    p.removeChild(c);
-                    window.clearInterval(cursorBlinkEvent);
-                    box.removeEventListener("keypress", keypress);
-                    box.removeEventListener("keydown", keydown);
-                    
-                    Output.WriteLine(text);
-                    
-                    if(callback)
+                    if (context)
                     {
-                        if (context)
-                        {
-                            callback.call(context, text);
-                            return;
-                        }
-                        else
-                        {
-                            callback(text);
-                            return;
-                        }
+                        callback.call(context, text);
+                        return;
+                    }
+                    else
+                    {
+                        callback(text);
+                        return;
                     }
                 }
-                else
-                {
-                    document.getElementById("input").innerText += String.fromCharCode(e.keyCode || e.charCode);
-                }
             }
-            box.addEventListener("keypress", keypress);
-            
-            function keydown(e)
+            else
             {
-                if (e.keyCode == 8) // Backspace / Delete
-                {
-                    document.getElementById("input").innerText = document.getElementById("input").innerText.slice(0, -1);
-                    e.preventDefault();
-                }
+                document.getElementById("input").innerText += String.fromCharCode(e.keyCode || e.charCode);
             }
-            box.addEventListener("keydown", keydown);
         }
+        box.addEventListener("keypress", keypress);
+        
+        function keydown(e)
+        {
+            if (e.keyCode == 8) // Backspace / Delete
+            {
+                document.getElementById("input").innerText = document.getElementById("input").innerText.slice(0, -1);
+                e.preventDefault();
+            }
+        }
+        box.addEventListener("keydown", keydown);
     }
     
     static Clear()
