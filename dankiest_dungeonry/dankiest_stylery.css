@@ -9,6 +9,12 @@ div
     display: inline;
 }
 
+a
+{
+    color: teal;
+    text-decoration-style: none;
+}
+
 #out
 {
     font-family: Consolas, Courier New, Courier, monospace;

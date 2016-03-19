@@ -52,6 +52,54 @@ class Game
         {
             this.help();
         }
+        else if (input.startsWith("fight"))
+        {
+            Output.WriteLine("Under construction. Watch " +
+             "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
+             "the repository</a> for updates!");
+        }
+        else if (input.startsWith("go"))
+        {
+            Output.WriteLine("Under construction. Watch " +
+             "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
+             "the repository</a> for updates!");
+        }
+        else if (input.startsWith("take"))
+        {
+            Output.WriteLine("Under construction. Watch " +
+             "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
+             "the repository</a> for updates!");
+        }
+        else if (input.startsWith("drop"))
+        {
+            Output.WriteLine("Under construction. Watch " +
+             "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
+             "the repository</a> for updates!");
+        }
+        else if (input.startsWith("use"))
+        {
+            Output.WriteLine("Under construction. Watch " +
+             "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
+             "the repository</a> for updates!");
+        }
+        else if (input.startsWith("inv"))
+        {
+            Output.WriteLine("Under construction. Watch " +
+             "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
+             "the repository</a> for updates!");
+        }
+        else if (input.startsWith("check"))
+        {
+            Output.WriteLine("Under construction. Watch " +
+             "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
+             "the repository</a> for updates!");
+        }
+        else if (input.startsWith("equip"))
+        {
+            Output.WriteLine("Under construction. Watch " +
+             "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
+             "the repository</a> for updates!");
+        }
         else if (input.startsWith("clear"))
         {
             Output.Clear();
