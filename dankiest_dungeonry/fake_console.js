@@ -85,7 +85,22 @@ class Output
     {
         if (window.mobilecheck())
         {
-            prompt();
+            var text = prompt("Enter a command") || "cancel";
+            Output.WriteLine(text);
+            
+            if(callback)
+            {
+                if (context)
+                {
+                    callback.call(context, text);
+                    return;
+                }
+                else
+                {
+                    callback(text);
+                    return;
+                }
+            }
         }
         
         var out = document.getElementById("out");
