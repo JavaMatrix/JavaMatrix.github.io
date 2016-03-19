@@ -83,7 +83,7 @@ class Output
     
     static ReadLine(callback, context)
     {
-        if (window.mobilecheck())
+        if (mobilecheck())
         {
             Output.MobileReadLine(callback, context);
             return;
