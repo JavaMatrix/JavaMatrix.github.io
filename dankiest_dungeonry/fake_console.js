@@ -86,6 +86,7 @@ class Output
         if (window.mobilecheck())
         {
             Output.MobileReadLine(callback, context);
+            return;
         }
         
         var out = document.getElementById("out");
@@ -172,7 +173,7 @@ class Output
         var ht = document.getElementsByTagName("html")[0];
         ht.onclick = function()
         {
-            box.select();
+            box.focus();
             var out = document.getElementById("out");
             var input_area = document.createElement("div");
             input_area.id = "input_area";
