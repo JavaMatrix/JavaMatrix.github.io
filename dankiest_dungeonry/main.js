@@ -5,7 +5,7 @@ window.mobilecheck = function() {
 }
 
 
-if (mobilecheck)
+if (mobilecheck())
 {
     var textbox = document.createElement("textarea");
     textbox.rows = 1;
