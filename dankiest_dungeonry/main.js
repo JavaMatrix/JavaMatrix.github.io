@@ -4,7 +4,6 @@ window.mobilecheck = function() {
   return check;
 }
 
-
 if (mobilecheck())
 {
     var textbox = document.createElement("textarea");
@@ -12,4 +11,9 @@ if (mobilecheck())
     document.getElementById("mobileinarea").appendChild(textbox);
 }
 
-Game.instance.init();
+if (location.hostname == "")
+{
+    document.getElementById("title").innerText = "(Local) Dankiest Dungeonry";
+}
+
+Game.init();
