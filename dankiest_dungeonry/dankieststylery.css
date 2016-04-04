@@ -32,6 +32,13 @@ a
 #out
 {
     font-family: Consolas, Courier New, Courier, monospace;
+    
+    /* http://stackoverflow.com/questions/248011/how-do-i-wrap-text-in-a-pre-tag */
+    white-space: pre-wrap;       /* CSS 3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
 .cursor-on
@@ -42,4 +49,17 @@ a
 .cursor-off
 {
     color: black;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+ 
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 255, 0, 1);
 }

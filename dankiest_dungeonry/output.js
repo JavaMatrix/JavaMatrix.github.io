@@ -15,7 +15,7 @@ Output.Flush = function()
 
 Output.Write = function(str, no_flush)
 {
-    if (typeof Output.buffer == "undefined")
+    if (!Output.buffer)
         Output.buffer = "";
         
     Output.buffer += str;
@@ -31,6 +31,25 @@ Output.Write = function(str, no_flush)
 Output.WriteLine = function(str, no_flush)
 {
     Output.Write(str + "<br\>", no_flush);
+}
+
+Output.WriteI18n = function(key, no_newline, no_flush)
+{
+    var str = I18n[key];
+    if (!str)
+    {
+        console.log("[WARN] I18n does not contain a definition for " + key + ".");
+        str = key;
+    }
+    
+    if (no_newline)
+    {
+        Output.Write(str, no_flush);
+    }
+    else
+    {
+        Output.WriteLine(str, no_flush);
+    }
 }
 
 // dramaType: types out a string with a delay between each char to the

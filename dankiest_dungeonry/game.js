@@ -27,7 +27,7 @@ Game.drawGiantLogo = function()
     Output.WriteLine("|     ||     ||  |  ||     ||     ||     ||  |  ||  .  \\|     |", true);
     Output.WriteLine("|_____| \\__,_||__|__||___,_||_____| \\___/ |__|__||__|\\_||____/ ", true);
     Output.WriteLine("                                                               ", true);
-    Output.WriteLine("Copywrong &#9408; 1977 Defenestration Coding Uncorporated");
+    Output.WriteI18n("copywrong");
     Game.help();
     Output.Write("&gt; ");
     Output.ReadLine(Game.handleInput);
@@ -35,69 +35,99 @@ Game.drawGiantLogo = function()
 
 Game.handleInput = function(input)
 {
-    // Clean up the input.
-    input = input.toLowerCase().trim();
-    
-    // Process the command.
-    if (input.startsWith("help"))
+    try
     {
-        Game.help();
+        // Clean up the input.
+        input = input.toLowerCase().trim();
+        
+        // Grab the args.
+        args = input.split(" ").slice(1);
+        
+        // Process the command.
+        if (input.startsWith("help"))
+        {
+            Game.help();
+        }
+        else if (input.startsWith("fight"))
+        {
+            Output.WriteLine("Under construction. Watch " +
+                "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
+                "the repository</a> for updates!");
+        }
+        else if (input.startsWith("go"))
+        {
+            Output.WriteLine("Under construction. Watch " +
+                "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
+                "the repository</a> for updates!");
+        }
+        else if (input.startsWith("take"))
+        {
+            Output.WriteLine("Under construction. Watch " +
+                "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
+                "the repository</a> for updates!");
+        }
+        else if (input.startsWith("drop"))
+        {
+            Output.WriteLine("Under construction. Watch " +
+                "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
+                "the repository</a> for updates!");
+        }
+        else if (input.startsWith("use"))
+        {
+            Output.WriteLine("Under construction. Watch " +
+                "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
+                "the repository</a> for updates!");
+        }
+        else if (input.startsWith("inv"))
+        {
+            Output.WriteLine("Under construction. Watch " +
+                "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
+                "the repository</a> for updates!");
+        }
+        else if (input.startsWith("check"))
+        {
+            Output.WriteLine("Under construction. Watch " +
+                "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
+                "the repository</a> for updates!");
+        }
+        else if (input.startsWith("equip"))
+        {
+            Output.WriteLine("Under construction. Watch " +
+                "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
+                "the repository</a> for updates!");
+        }
+        else if (input.startsWith("clear"))
+        {
+            Output.Clear();
+        }
+        else if (input.startsWith("i18n"))
+        {
+            var translated = I18n[args[0]];
+            if (translated)
+            {
+                Output.WriteLine(translated);
+            }
+            else
+            {
+                Output.WriteLine("No such string found in I18n.");
+            }
+        }
+        else
+        {
+            if (I18n["command-" + input])
+            {
+                Output.WriteI18n("command-" + input);
+            }
+            else
+            {
+                Output.WriteLine("I don't understand what " + input + " means.");
+            }
+        }
     }
-    else if (input.startsWith("fight"))
+    catch (e)
     {
-        Output.WriteLine("Under construction. Watch " +
-            "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
-            "the repository</a> for updates!");
-    }
-    else if (input.startsWith("go"))
-    {
-        Output.WriteLine("Under construction. Watch " +
-            "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
-            "the repository</a> for updates!");
-    }
-    else if (input.startsWith("take"))
-    {
-        Output.WriteLine("Under construction. Watch " +
-            "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
-            "the repository</a> for updates!");
-    }
-    else if (input.startsWith("drop"))
-    {
-        Output.WriteLine("Under construction. Watch " +
-            "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
-            "the repository</a> for updates!");
-    }
-    else if (input.startsWith("use"))
-    {
-        Output.WriteLine("Under construction. Watch " +
-            "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
-            "the repository</a> for updates!");
-    }
-    else if (input.startsWith("inv"))
-    {
-        Output.WriteLine("Under construction. Watch " +
-            "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
-            "the repository</a> for updates!");
-    }
-    else if (input.startsWith("check"))
-    {
-        Output.WriteLine("Under construction. Watch " +
-            "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
-            "the repository</a> for updates!");
-    }
-    else if (input.startsWith("equip"))
-    {
-        Output.WriteLine("Under construction. Watch " +
-            "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
-            "the repository</a> for updates!");
-    }
-    else if (input.startsWith("clear"))
-    {
-        Output.Clear();
-    }
-    else
-    {
-        Output.WriteLine("I don't understand what " + input + " means.");
+         console.log("[ERROR] " + e);
+         Output.WriteI18n("error-occurred");
     }
     
     // Get the next command.
@@ -107,17 +137,15 @@ Game.handleInput = function(input)
 
 Game.help = function()
 {
-    Output.WriteLine("Commands:");
-    Output.WriteLine("  Help: Displays this help menu");
-    Output.WriteLine("  Fight: Attack the monster that you are currently in battle with, or start a\n" +
-    "\tbattle with a random enemy. Use \"auto fight\" to auto-battle every monster in the room. This\n" +
-    "\tcannot be aborted once started, so use care.");
-    Output.WriteLine("  Go (where): Move to a new area in the direction you specified. For example: go north");
-    Output.WriteLine("  Take: Pick an item up off of the ground and put it in your bag.");
-    Output.WriteLine("  Drop: Drop an item from your bag onto the ground.");
-    Output.WriteLine("  Use: Use the item in the given slot (swig a potion, cast a spell, etc).");
-    Output.WriteLine("  Inventory: Look at the items in your inventory.");
-    Output.WriteLine("  Check: Take a look at your surroundings, your enemy, and yourself.");
-    Output.WriteLine("  Equip: Equip an item from your bag, such as a weapon or armor.");
-    Output.WriteLine("  Clear: Clear the screen.");
+    Output.WriteI18n("help-header");
+    Output.WriteI18n("help-help");
+    Output.WriteI18n("fight-help");
+    Output.WriteI18n("go-help");
+    Output.WriteI18n("take-help");
+    Output.WriteI18n("drop-help");
+    Output.WriteI18n("use-help");
+    Output.WriteI18n("inventory-help");
+    Output.WriteI18n("check-help");
+    Output.WriteI18n("equip-help");
+    Output.WriteI18n("clear-help");
 }

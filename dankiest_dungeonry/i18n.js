@@ -1,16 +1,9 @@
 var I18n = {};
+var I18nFuncs = {};
 
-I18n.Load = function()
+I18nFuncs.LoadFile = function(data)
 {
-    $.get("./data/i18n.yaml", I18n.LoadFile);
+    I18n = data;
 }
 
-I18n.LoadFile = function(text)
-{
-    var doc = safeLoad(text);
-    for (var tag in doc) {
-        console.log(tag);
-    }
-}
-
-I18n.Load();
+$.getJSON("./data/i18n.json", I18nFuncs.LoadFile);
