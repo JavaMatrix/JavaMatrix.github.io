@@ -50,51 +50,35 @@ Game.handleInput = function(input)
         }
         else if (input.startsWith("fight"))
         {
-            Output.WriteLine("Under construction. Watch " +
-                "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
-                "the repository</a> for updates!");
+            Output.WriteI18n("under-construction");
         }
         else if (input.startsWith("go"))
         {
-            Output.WriteLine("Under construction. Watch " +
-                "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
-                "the repository</a> for updates!");
+            Output.WriteI18n("under-construction");
         }
         else if (input.startsWith("take"))
         {
-            Output.WriteLine("Under construction. Watch " +
-                "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
-                "the repository</a> for updates!");
+            Output.WriteI18n("under-construction");
         }
         else if (input.startsWith("drop"))
         {
-            Output.WriteLine("Under construction. Watch " +
-                "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
-                "the repository</a> for updates!");
+            Output.WriteI18n("under-construction");
         }
         else if (input.startsWith("use"))
         {
-            Output.WriteLine("Under construction. Watch " +
-                "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
-                "the repository</a> for updates!");
+            Output.WriteI18n("under-construction");
         }
         else if (input.startsWith("inv"))
         {
-            Output.WriteLine("Under construction. Watch " +
-                "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
-                "the repository</a> for updates!");
+            Output.WriteI18n("under-construction");
         }
         else if (input.startsWith("check"))
         {
-            Output.WriteLine("Under construction. Watch " +
-                "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
-                "the repository</a> for updates!");
+            Output.WriteI18n("under-construction");
         }
         else if (input.startsWith("equip"))
         {
-            Output.WriteLine("Under construction. Watch " +
-                "<a href=\"http://github.com/JavaMatrix/javamatrix.github.io/tree/master/dankiest_dungeonry\">" +
-                "the repository</a> for updates!");
+            Output.WriteI18n("under-construction");
         }
         else if (input.startsWith("clear"))
         {
@@ -102,15 +86,29 @@ Game.handleInput = function(input)
         }
         else if (input.startsWith("i18n"))
         {
-            var translated = I18n[args[0]];
-            if (translated)
+            if (input.startsWith("i18n dump"))
             {
-                Output.WriteLine(translated);
+                for (var item in I18n)
+                {
+                    Output.WriteLine(item + " => " + I18n[item]);
+                }
             }
             else
             {
-                Output.WriteLine("No such string found in I18n.");
+                var translated = I18n[args[0]];
+                if (translated)
+                {
+                    Output.WriteLine(translated);
+                }
+                else
+                {
+                    Output.WriteLine("No such string found in I18n.");
+                }
             }
+        }
+        else if (input.startsWith("i hate myself"))
+        {
+            document.getElementById("out").style.fontFamily = "Comic Sans MS";
         }
         else
         {
