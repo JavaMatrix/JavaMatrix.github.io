@@ -88,15 +88,15 @@ Game.handleInput = function(input)
         {
             if (input.startsWith("i18n dump"))
             {
-                Output.Write("<table>", false);
+                Output.Write("<table>");
                 for (var item in I18n)
                 {
-                   Output.Write("<tr>", false);
-                   Output.Write("<td>" + item + "</td>", false);
-                   Output.Write("<td>" + I18n[item] + "</td>", false)
-                   Output.Write("</tr>", false);
+                   Output.Write("<tr>");
+                   Output.Write("<td>" + item + "</td>");
+                   Output.Write("<td>" + I18n[item] + "</td>")
+                   Output.Write("</tr>");
                 }
-                Output.Write("</table>", true);
+                Output.Write("</table>");
             }
             else
             {
