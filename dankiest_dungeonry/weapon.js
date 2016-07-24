@@ -14,21 +14,29 @@
  *  <http://creativecommons.org/publicdomain/zero/1.0/>. 
  */
 
-function Player()
+function Weapon(name, damage, accuracy, crit)
 {
-	this.weapon = new Weapon("Candy Cane", 6, 0.3, 0.01);
-	this.max_health = 100;
-	this.health = 100;
-	this.inventory = [];
+	this.name = name;
+	this.damage = damage;
+	this.accuracy = accuracy;
+	this.crit = crit;
 }
 
-Player.prototype.attack = function()
+Weapon.prototype.swing = function()
 {
-	return this.weapon.swing();
+	var dmg = this.accuracy * this.damage;
+	dmg += Math.random() * ((1 - this.accuracy) * this.damage);
+
+	var ncrit = 0; 
+	while (Math.random() < this.crit)
+	{
+		dmg *= 2;
+		ncrit++;
+	}
+
+	return {
+		"damage": Math.floor(dmg),
+		"crit": ncrit		
+	};
 }
 
-Player.prototype.damage = function(damage)
-{
-	this.health -= damage;
-	return damage;
-}

@@ -14,21 +14,39 @@
  *  <http://creativecommons.org/publicdomain/zero/1.0/>. 
  */
 
-function Player()
+ROOM_DEFS = {};
+
+ 
+function Room(name)
 {
-	this.weapon = new Weapon("Candy Cane", 6, 0.3, 0.01);
-	this.max_health = 100;
-	this.health = 100;
-	this.inventory = [];
+	var data = ROOM_DEFS[name];
+	this.name = name;
+	this.description = data.description;
+	
+	this.monsters = [];
+	for (var i = 0; i < data.monsters.length; i++)
+	{
+		var def = data.monsters[i];
+		for (var n = 0; n < def.count; n++)
+		{
+			this.monsters.push(new Monster(def.type));
+		}
+	}
+
+	this.monsters.shuffle();
+	
+	this.exits = {};
+	this.altExits = {};
+
+	for (var i = 0; i < data.exits.length; i++)
+	{
+		var exitDef = data.exits[i];
+		this.exits[exitDef.direction] = exitDef.to;
+		this.altExits[window.Untrash(exitDef.direction)] = exitDef.to;
+	}
 }
 
-Player.prototype.attack = function()
+Room.prototype.popMonster = function()
 {
-	return this.weapon.swing();
-}
-
-Player.prototype.damage = function(damage)
-{
-	this.health -= damage;
-	return damage;
+	return this.monsters.pop();
 }

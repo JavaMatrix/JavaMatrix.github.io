@@ -1,62 +1,82 @@
 {
     "annoyed-bull": {
         "description": "a bull that is annoyed by your presence",
-        "plural": "a mob of %d annoyed bulls",
+        "plural": "a mob of %s annoyed bulls",
         "short": "annoyed bull",
         "attack-hit-text": "ignores you painfully",
         "attack-miss-text": "accidentally acknowledges you",
         "damaged-text": "huffs in annoyance",
         "death-text": "gets so annoyed it explodes into confetti",
-        "damage": 6,
         "health": 10,
         "armor": 0,
-        "max-drop-level": 1
+        "max-drop-level": 1,
+		"weapon": {
+			"name": "irritated horns",	
+			"damage": 6,
+			"accuracy": 0.1,
+			"crit": 0.01
+		}
     },
     "evil-turkey": {
         "description": "a turkey consumed and defined by darkness and shadow",
-        "plural": "a flock of %d darkness turkeys",
+        "plural": "a flock of %s darkness turkeys",
         "short": "darkness turkey",
         "attack-hit-text": "frightens you with its terrible gobble",
         "attack-miss-text": "tries to roar, but squeaks instead",
         "damaged-text": "just keeps gobbling villainously",
         "death-text": "dissolves into ash",
-        "damage": 1,
         "health": 4,
         "armor": 0,
-        "max-drop-level": 1
+        "max-drop-level": 1,
+		"weapon": {
+			"name": "tentacles of darkness",
+			"damage": 1,
+			"accuracy": 0.1,
+			"crit": 0.01
+		}
     },
     "wargle": {
         "description": "an incredibly large waffle with glowing red eyes",
-        "plural": "a pack of %d terrifying waffle-beasts",
+        "plural": "a pack of %s terrifying waffle-beasts",
         "short": "wargle",
         "attack-hit-text": "gets you all sticky",
         "attack-miss-text": "gets the trees all sticky, but misses you",
         "damaged-text": "screams as you bite a chunk out of its delicious flesh",
         "death-text": "is shocked by your actions and runs away into the unknown",
-        "damage": 10,
         "health": 60,
         "armor": 2,
-        "max-drop-level": 2
+        "max-drop-level": 2,
+		"weapon": {
+			"name": "syrup",
+			"damage": 10,
+			"accuracy": 0.2,
+			"crit": 0.02
+		}
     },
     "chickadeevil": {
         "description": "a robotic chickadee with malevolent programming",
-        "plural": "a flock of %d cybertronic chickadees",
+        "plural": "a flock of %s cybertronic chickadees",
         "short": "cyborg chickadee",
         "attack-hit-text": "burns you with its laser vision",
         "attack-miss-text": "is distracted by a cyborg worm",
-        "damaged-text": "screeches in disbelief, \"596f752068617665206e6f206c6966652e\"",
+        "damaged-text": "screeches in disbelief, \"48657820697320666f72206c6f736572732e\"!",
         "death-text": "explodes in a fireball so large you must suspend disbelief",
-        "damage": 12,
         "health": 48,
         "armor": 4,
         "programmer-thinking-about-pizza": "yes",
-        "max-drop-level": 2
+        "max-drop-level": 2,
+		"weapon": {
+			"name": "laser vision",
+			"damage": 10,
+			"accuracy": 0.2,
+			"crit": 0.02
+		}
     },
     "justice-knight": {
         "description": "a knight who loves justice a lot",
-        "plural": "a squad of %d justice knights",
+        "plural": "a squad of %s justice knights",
         "short": "justice knight",
-        "attack-hit-text": "justiced you very hard in the head",
+        "attack-hit-text": "justices you very hard in the head",
         "attack-miss-text": "gave a lecture on justice and forgot to attack you",
         "damaged-text": "carefully cradles his damaged justice",
         "death-text": "cries out, \"JUSTICE!\", then dies",
@@ -67,7 +87,7 @@
     },
     "parrot-buccaneer": {
         "description": "a four-story parrot with a pirate on its shoulder",
-        "plural": "a flock of %d parrot buccaneers",
+        "plural": "a flock of %s parrot buccaneers",
         "short": "parrot buccaneer",
         "attack-hit-text": "attacked you with the chainsaw on its right hand",
         "attack-miss-text": "allowed its two eyepatches to affect its aim",
