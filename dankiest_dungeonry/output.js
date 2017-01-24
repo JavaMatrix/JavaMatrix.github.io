@@ -138,6 +138,7 @@ Output.ReadLine = function(callback)
     cursor.id = "cursor";
     cursor.classList.add("cursor-on");
     cursor.innerText = "_";
+	cursor.textContent = "_";
     input_area.appendChild(cursor);
     
     // Start up the cursor.
@@ -181,8 +182,9 @@ Output.ReadLine = function(callback)
         }
         else
         {
-            document.getElementById("input").innerText += String.fromCharCode(e.keyCode || e.charCode);
         }
+            document.getElementById("input").innerText += String.fromCharCode(e.keyCode || e.charCode);
+            document.getElementById("input").textContent += String.fromCharCode(e.keyCode || e.charCode);
     }
     document.getElementsByTagName("html")[0].addEventListener("keypress", keypress);
     
@@ -191,6 +193,7 @@ Output.ReadLine = function(callback)
         if (e.keyCode == 8) // Backspace / Delete
         {
             document.getElementById("input").innerText = document.getElementById("input").innerText.slice(0, -1);
+            document.getElementById("input").textContent = document.getElementById("input").textContent.slice(0, -1);
             e.preventDefault();
         }
     }
