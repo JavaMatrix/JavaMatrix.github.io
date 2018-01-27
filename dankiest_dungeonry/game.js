@@ -30,7 +30,7 @@ Game.dots = function() {
 
 Game.drawGiantLogo = function()
 {
-    Outhtput.WriteLine("    ___     ____  ____   __  _  ____    ___  _____ ______     ", true);
+    Output.WriteLine("    ___     ____  ____   __  _  ____    ___  _____ ______     ", true);
     Output.WriteLine("   |   \\   /    ||    \\ |  |/ ]|    |  /  _]/ ___/|      |    ", true);
     Output.WriteLine("   |    \\ |  o  ||  _  ||  ' /  |  |  /  [_(   \\_ |      |    ", true);
     Output.WriteLine("   |  D  ||     ||  |  ||    \\  |  | |    _]\\__  ||_|  |_|    ", true);
