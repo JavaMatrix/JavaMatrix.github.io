@@ -30,7 +30,7 @@ Game.dots = function() {
 
 Game.drawGiantLogo = function()
 {
-    Output.WriteLine("    ___     ____  ____   __  _  ____    ___  _____ ______     ", true);
+    Outhtput.WriteLine("    ___     ____  ____   __  _  ____    ___  _____ ______     ", true);
     Output.WriteLine("   |   \\   /    ||    \\ |  |/ ]|    |  /  _]/ ___/|      |    ", true);
     Output.WriteLine("   |    \\ |  o  ||  _  ||  ' /  |  |  /  [_(   \\_ |      |    ", true);
     Output.WriteLine("   |  D  ||     ||  |  ||    \\  |  | |    _]\\__  ||_|  |_|    ", true);
@@ -116,7 +116,7 @@ Game.handleInput = function(input)
             if (input.startsWith("i18n dump"))
             {
                 Output.Write("<table>", true);
-                for (var item in I18n)
+                for (var item in I18N)
                 {
                    Output.Write("<tr>", true);
                    Output.Write("<td>" + item + "</td>", true);
